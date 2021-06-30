@@ -1,17 +1,20 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const authRouter = require('./authRoutes.js')
 const PORT = process.env.PORT || 5000
 const DB_URL = 'This you need to add your MongoDB credential for the database.'
 
 const app = express()
 app.use(express.json())
-const start = async () => {
+app.use('/auth', authRouter)
+
+async function startApplication() {
     try {
-        await mongoose.connect(DB_URL)
-        app.listen(PORT, () => console.log('The Server works fine at PORT = .' + PORT))
+        await mongoose.connect(DB_URL, {useNewUrlParser: true}, {useUnifiedTopology: true}, {useFindAndModify: false})
+        app.listen(PORT, () => console.log("SERVER STARTED ON PORT " + PORT))
     } catch (e) {
         console.log(e)
     }
 }
 
-start()
+startApplication()

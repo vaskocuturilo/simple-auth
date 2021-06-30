@@ -1,12 +1,25 @@
 {
   "name": "simple-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "![](https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vaskocuturilo/simple-auth.git"
+  },
+  "bugs": {
+    "url": "https://github.com/vaskocuturilo/simple-auth/issues"
+  },
+  "homepage": "https://github.com/vaskocuturilo/simple-auth#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.13.0",
+    "nodemon": "^2.0.9"
+  }
 }

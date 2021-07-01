@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./authRoutes.js')
 const PORT = process.env.PORT || 5000
-const DB_URL = 'This you need to add your MongoDB credential for the database.'
+const DB_URL = ''
 
 const app = express()
 app.use(express.json())

@@ -20,13 +20,13 @@ Post: Please use this iOS Note Apllication:
 
 You will need the following technologies available to try it out:
 
-Git
-Express
-Node.js
-MongoDB
-JavaScript
-IDE of your choice
-Web browser Chrome
+* Git
+* Express
+* Node.js
+* MongoDB
+* JavaScript
+* IDE of your choice
+* Web browser Chrome
 
 | ENDPOINT    | TYPE            | EXAMPLE                            | REQUEST                      |
 |-------------|-----------------|------------------------------------|------------------------------|

@@ -1,3 +1,6 @@
+const User = require('./models/User')
+const Role = require('./models/Role')
+
 class authController {
 
     async register(req, res) {

@@ -15,7 +15,6 @@ const generateAccessToken = (id, roles) => {
 }
 
 class authController {
-
     async register(req, res) {
         try {
             const errors = validationResult(req)
@@ -23,14 +22,14 @@ class authController {
                 return res.status(400).json({message: 'Registration for a new user has an error.', errors})
 
             }
-            const {username, password} = req.body
+            const {username, password, name} = req.body
             const candidate = await User.findOne({username})
             if (candidate) {
                 return res.status(400).json({message: 'A user with this username exists.'})
             }
             const hashPassword = bcrypt.hashSync(password, saltRounds)
             const userRole = await Role.findOne({value: "USER"})
-            const newUser = new User({username, password: hashPassword, roles: [userRole.value]})
+            const newUser = new User({username, password: hashPassword, roles: [userRole.value], name})
             await newUser.save()
             return res.status(200).json({message: 'New user registration is a success.'})
         } catch
@@ -52,7 +51,6 @@ class authController {
                 return res.status(400).json({message: 'The password for user ' + regUser + ' not valid.'})
             }
             const token = generateAccessToken(regUser._id, regUser.roles)
-
             return res.json({token})
         } catch (e) {
             console.log(e)
@@ -62,7 +60,17 @@ class authController {
 
     async getUserInformation(req, res) {
         try {
-            const users = await User.find()
+            const users = await User.find().select('-password')
+            return res.json(users)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+    async getUserProfile(req, res) {
+        try {
+            const {username} = req.query
+            const users = await User.findOne({username}).select('-roles').select('-password')
             return res.json(users)
         } catch (e) {
             console.log(e)
@@ -71,5 +79,4 @@ class authController {
 }
 
 
-module
-    .exports = new authController()
+module.exports = new authController()

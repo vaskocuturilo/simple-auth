@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./authRoutes.js')
 const PORT = process.env.PORT || 5000
-const DB_URL = ''
+const DB_URL = 'mongodb+srv://user:qwerty12345@cluster0.19w3l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 const app = express()
 app.use(express.json())

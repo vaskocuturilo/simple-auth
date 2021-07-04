@@ -7,12 +7,13 @@ const authMiddleware = require('./middleware/authMiddleware')
 router.post('/register', [
     check('username', 'The username field cannot is empty').notEmpty(),
     check('password', 'The password field cannot is empty').notEmpty(),
-    check('password', 'The password length must be min 4, but not max 8 elements.').isLength({min: 4, max: 8}),
+    check('password', 'The password length must be min 4, but not max 8 elements.').isLength({min: 4, max: 16}),
     check('name', 'The name field cannot is empty').notEmpty()
 ], controller.register)
 router.post('/login', controller.login)
 router.get('/users', authMiddleware, controller.getUserInformation)
 router.get('/profile', authMiddleware, controller.getUserProfile)
+router.post('/remove', authMiddleware, controller.removeUser)
 
 
 module.exports = router

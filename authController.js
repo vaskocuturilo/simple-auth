@@ -76,7 +76,20 @@ class authController {
             console.log(e)
         }
     }
-}
 
+    async removeUser(req, res) {
+        try {
+            const {username} = req.query
+            const users = await User.findOne({username})
+            if (!users) {
+                return res.status(400).json({message: 'The user not found in the database.'})
+            }
+            const removeUser = await User.findByIdAndDelete(users.id)
+            return res.json(removeUser)
+        } catch (e) {
+            console.log(e)
+        }
+    }
+}
 
 module.exports = new authController()

@@ -1,11 +1,11 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "description": "Simple Node jS server with REST API for iOS Note application",
+    "description": "Simple Node jS server with REST API for iOS Note application.",
     "version": "1.0.0",
-    "title": "Service API",
+    "title": "Service REST API.",
     "contact": {
-      "email": ""
+      "email": "antony.s.smirnov@gmail.com"
     },
     "license": {
       "name": "MIT",

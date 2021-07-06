@@ -1,0 +1,277 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Simple Node jS server with REST API for iOS Note application",
+    "version": "1.0.0",
+    "title": "Service API",
+    "contact": {
+      "email": ""
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "tags": [
+    {
+      "name": "Action",
+      "description": "All actions for service"
+    }
+  ],
+  "paths": {
+    "/users": {
+      "get": {
+        "tags": [
+          "Action"
+        ],
+        "summary": "The get information about all users.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "Action"
+        ],
+        "summary": "The register a new user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "password",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The register a new user.",
+          "required": "true",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": ""
+              },
+              "example": {
+                "username": "example1",
+                "password": "example1",
+                "name": "example1"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "Action"
+        ],
+        "summary": "The authorization user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "password",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The authorization user.",
+          "required": "true",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": ""
+              },
+              "example": {
+                "username": "example1",
+                "password": "example1"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": [
+          "Action"
+        ],
+        "summary": "Get profile information user.",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    },
+    "/remove": {
+      "post": {
+        "tags": [
+          "Action"
+        ],
+        "summary": "The delete user.",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "username",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "The delete user.",
+          "required": "true",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": ""
+              },
+              "example": {
+                "username": "example1"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "400": {
+            "description": "BAD_REQUEST",
+            "schema": {
+              "$ref": ""
+            }
+          },
+          "404": {
+            "description": "NOT_FOUND",
+            "schema": {
+              "$ref": ""
+            }
+          }
+        }
+      }
+    }
+  }
+}

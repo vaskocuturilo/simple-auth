@@ -28,9 +28,10 @@ You will need the following technologies available to try it out:
 * IDE of your choice
 * Web browser Chrome
 
-| ENDPOINT    | TYPE            | EXAMPLE                            | REQUEST                      |
-|-------------|-----------------|------------------------------------|------------------------------|
-| /           | GET             |http://localhost:5000/auth/         |"Server is work fine."        |
-| /users      | GET             |http://localhost:5000/auth/users    |Return all users from database|
-| /register   | POST            |http://localhost:5000/auth/register |Create new user in database   |
-| /login      | POST            |http://localhost:5000/auth/login    |Login user                    |
+## Documentation in swagger:
+![](https://alexdunndev.files.wordpress.com/2018/05/swagger-logo-horizontal.png)
+
+Open in browser:  http://localhost:5000/
+
+![](https://a.radikal.ru/a10/2107/1a/098c1c63a5a2.png)
+

@@ -1,12 +1,16 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const authRouter = require('./authRoutes.js')
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 const PORT = process.env.PORT || 5000
-const DB_URL = 'mongodb+srv://user:qwerty12345@cluster0.19w3l.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const DB_URL = ''
 
 const app = express()
 app.use(express.json())
 app.use('/auth', authRouter)
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 async function startApplication() {
     try {

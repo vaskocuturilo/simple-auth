@@ -35,3 +35,8 @@ Open in browser:  http://localhost:5000/
 
 ![](https://a.radikal.ru/a10/2107/1a/098c1c63a5a2.png)
 
+## How to work:
+
+![https://d.radikal.ru/d27/2107/d7/ba3bdd553416.png]
+
+

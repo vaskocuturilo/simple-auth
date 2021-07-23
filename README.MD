@@ -37,6 +37,6 @@ Open in browser:  http://localhost:5000/
 
 ## How to work:
 
-![https://d.radikal.ru/d27/2107/d7/ba3bdd553416.png]
+![](https://d.radikal.ru/d27/2107/d7/ba3bdd553416.png)
 
 
